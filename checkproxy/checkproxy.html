@@ -12,7 +12,7 @@
       <script>
         var pingData = {};
         let n = 0;
-		let q = 0;
+	let q = 0;
         function updateRes() {
           document.getElementById('pingResult').innerText = JSON.stringify(pingData, null, 2);
         }
@@ -25,15 +25,15 @@
           })
           .catch((err) => {
             pingData['serverToExternalIP-' + (n++)] = err.toString();
-			q++;
+	    q++;
           })
           .finally(() => {
             updateRes();
           })
         }
-		if(q >= 4){
-			console.log("Proxy Dân Cư");
-		}
+	if(q >= 4){
+		console.log("Proxy Dân Cư");
+	}
 
         function ping(url, n) {
           var started = new Date().getTime();
