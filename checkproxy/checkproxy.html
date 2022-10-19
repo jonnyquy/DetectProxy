@@ -16,7 +16,7 @@
         function updateRes() {
           document.getElementById('pingResult').innerText = JSON.stringify(pingData, null, 2);
         }
-		
+
         for (var i=0; i <= 4; i++) {
           fetch('https://abs.incolumitas.com/ping') 
           .then(response => response.json())
@@ -25,15 +25,12 @@
           })
           .catch((err) => {
             pingData['serverToExternalIP-' + (n++)] = err.toString();
-	    q++;
+            q++;
           })
           .finally(() => {
             updateRes();
           })
         }
-	if(q >= 4){
-		console.log("Proxy Dân Cư");
-	}
 
         function ping(url, n) {
           var started = new Date().getTime();
